@@ -7746,4 +7746,8 @@ namespace WpfApp3
             rad3.IsChecked = false;
         }
     }
+    class OtiDo
+    {
+
+    }
 } 

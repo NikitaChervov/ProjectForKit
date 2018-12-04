@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Проект" Height="820"  Width="1250" BorderBrush="Black" WindowState="Maximized" >
     <TabControl>
-        <TabItem x:Name="Tab1" Margin="-2,-2,-2.2,-0.4">
+        <TabItem Name="Tab1" Margin="-2,-2,-2.2,-0.4">
             <TabItem.Header>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="3" FontSize="18">Карта</TextBlock>
@@ -381,6 +381,7 @@
                 </Grid>
             </TabItem.Content>
         </TabItem>
+        
         <TabItem x:Name="Tab3" Margin="-1.6,5,-1.6,-0.4">
             <TabItem.Header>
                 <StackPanel Orientation="Horizontal" Height="20">
