@@ -1,0 +1,420 @@
+﻿<Window x:Class="WpfApp3.MainWindow" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="Проект" Height="820"  Width="1250" BorderBrush="Black" WindowState="Maximized" >
+    <TabControl>
+        <TabItem x:Name="Tab1" Margin="-2,-2,-2.2,-0.4">
+            <TabItem.Header>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="3" FontSize="18">Карта</TextBlock>
+
+                </StackPanel>
+            </TabItem.Header>
+            <TabItem.Content>
+                <Grid OpacityMask="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1000"/>
+                        <ColumnDefinition Width="250"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="108"/>
+                        <RowDefinition Height="108"/>
+                        <RowDefinition Height="108"/>
+                        <RowDefinition Height="108"/>
+                        <RowDefinition Height="108"/>
+                        <RowDefinition Height="250"/>
+                    </Grid.RowDefinitions>
+
+                    <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="6" Source="Image1.png" Stretch="Fill" Grid.ColumnSpan="2" Margin="2,-2,247.6,249.4"/>
+
+                    <Label Foreground="#FF68CD74" Content="Количество населения:" Grid.Column="1" Grid.Row="0" FontSize="20" />
+                    <Label Foreground="#FF68CD74" Content="Площадь:" Grid.Column="1" Grid.Row="1" FontSize="20" />
+                    <Label Foreground="#FF68CD74" Content="Часовой пояс:" Grid.Column="1" Grid.Row="2" FontSize="20" />
+                    <Label Foreground="#FF68CD74" Content="Температурный минимум:" Grid.Column="1" Grid.Row="3" FontSize="19" />
+                    <Label Foreground="#FF68CD74" Content="Температурный максимум:" Grid.Column="1" Grid.Row="4" FontSize="18" />
+
+
+                    <TextBlock Foreground="#FF68CD74" Name="kn" Text="??" Grid.Column="1" Grid.Row="0" FontSize="20" Margin="6.6,37,-6.8,36.8" />
+                    <TextBlock Foreground="#FF68CD74" Name="pl" Text="??" Grid.Column="1" Grid.Row="1" FontSize="20" Margin="6.6,37,-6.8,36.8" />
+                    <TextBlock Foreground="#FF68CD74" Name="chp" Text="??" Grid.Column="1" Grid.Row="2" FontSize="20" Margin="6.6,37,-6.8,36.8" />
+                    <TextBlock Foreground="#FF68CD74" Name="tmin" Text="??" Grid.Column="1" Grid.Row="3" FontSize="20" Margin="6.6,37,-6.8,36.8" />
+                    <TextBlock Foreground="#FF68CD74" Name="tmax" Text="??" Grid.Column="1" Grid.Row="4" FontSize="20" Margin="6.6,37,-6.8,36.8" />
+                    <TextBlock Foreground="#FF68CD74" Name="name" Grid.Column="0" Grid.Row="4" FontSize="72" Text="???" Margin="0,107.2,0,128.4" Grid.RowSpan="2" />
+                    <TextBlock Foreground="#FF68CD74" x:Name="у3" Grid.Row="5" FontSize="30" Margin="833,5.2,31.6,35.4" Grid.ColumnSpan="2" ><Run Text="Нажмите на город"/><Run Text=" "/><Run Text="и "/><LineBreak/><Run Text="получите информацию"/><Run Text=","/><LineBreak/><Run Text="выберите"/><Run Text=" два и узнайте "/><LineBreak/><Run Text="расст"/><Run Text="о"/><Run Text="яние напрямую "/><LineBreak/><Run Text="между ними"/></TextBlock>
+
+                    <Label Foreground="#FF68CD74" Content="от" Grid.Column="0" Grid.Row="5" Margin="0,85.2,966,131.4" FontSize="20" />
+                    <TextBlock Foreground="#FF68CD74" Name="first" Grid.Column="0" Grid.Row="5" FontSize="20" Text="???" Margin="41,92.2,754,129.4" />
+                    <Label Foreground="#FF68CD74" Content="до" Grid.Column="0" Grid.Row="5" Margin="-2,112.2,970,104.4" FontSize="20" />
+                    <TextBlock Foreground="#FF68CD74" Name="second" Grid.Column="0" Grid.Row="5" FontSize="20" Text="???" Margin="38,118.2,757,103.4" />
+                    <TextBlock Foreground="#FF68CD74" Name="Rs" Grid.Column="0" Grid.Row="5" FontSize="72" Text="???" Margin="5,117.2,244.6,50.4" Grid.ColumnSpan="2" />
+
+
+                    <Button Margin="124,103.2,836,100.8" Grid.Row="1" Click="SP_Click" Opacity="0" Grid.RowSpan="2"  >
+                        <Button.ToolTip>
+                            <Image Height="145" Source="Image5.png" Stretch="Fill" Width="135"/>
+                        </Button.ToolTip>
+                        <Image Height="166" Source="Image31.png" Stretch="Fill" Width="135"/>
+                    </Button>
+
+
+                    <Button Margin="154,55.2,806,40.8" Grid.Row="2" Click="YaV_Click" Opacity="0">
+                        <Button.ToolTip>
+                            <Image  Source="Image6.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="128,69.2,838,26.8" Grid.Row="2" Click="MoVa_Click" Opacity="0"  >
+                        <Button.ToolTip>
+                            <Image  Source="Image8.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="116,88.2,863,7.8" Grid.Row="2" Click="TL_Click" Opacity="0"  >
+                        <Button.ToolTip>
+                            <Image  Source="Image9.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="167,90.2,793,0" Grid.Row="2" Click="NN_Click" Opacity="0" Height="15" VerticalAlignment="Top"  >
+                        <Button.ToolTip>
+                            <Image  Source="Image10.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="135,100.2,844,103.8" Grid.Row="2" Click="RZh_Click" Opacity="0" Grid.RowSpan="2" >
+                        <Button.ToolTip>
+                            <Image  Source="Image11.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="116,5.2,857,90.8" Grid.Row="3" Click="LP_Click" Opacity="0" >
+                        <Button.ToolTip>
+                            <Image  Source="Image12.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="109,19.2,857,78.8" Grid.Row="3" Click="VoRo_Click" Opacity="0" >
+                        <Button.ToolTip>
+                            <Image  Source="Image13.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="224,2.2,749,94.8" Grid.Row="3" Click="UZh_Click" Opacity="0" >
+                        <Button.ToolTip>
+                            <Image  Source="Image14.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="260,6.2,713,92.8" Grid.Row="3" Click="Perm_Click" Opacity="0" >
+                        <Button.ToolTip>
+                            <Image  Source="Image15.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="186,14.2,790,81.8" Grid.Row="3" Click="Kazan_Click" Opacity="0"  >
+                        <Button.ToolTip>
+                            <Image  Source="Image16.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="179,28.2,783,69.8" Grid.Row="3" Click="Ulaynovsk_Click" Opacity="0"  >
+                        <Button.ToolTip>
+                            <Image  Source="Image17.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="213,17.2,741,78.8" Grid.Row="3" Click="Naberezhnue_Click" Opacity="0"  >
+                        <Button.ToolTip>
+                            <Image  Source="Image18.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="197,38.2,768,60.8" Grid.Row="3" Click="Tolyatti_Click" Opacity="0"  >
+                        <Button.ToolTip>
+                            <Image  Source="Image19.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="195,48.2,774,53.8" Grid.Row="3" Click="Samara_Click" Opacity="0"  >
+                        <Button.ToolTip>
+                            <Image  Source="Image20.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="237,43.2,741,57.8" Grid.Row="3" Click="Ufa_Click" Opacity="0"  >
+                        <Button.ToolTip>
+                            <Image  Source="Image21.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="161,53.2,808,48.8" Grid.Row="3" Click="Saratov_Click" Opacity="0"  >
+                        <Button.ToolTip>
+                            <Image  Source="Image22.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="282,30.2,668,68.8" Grid.Row="3" Click="Ecaterinburg_Click" Opacity="0" >
+                        <Button.ToolTip>
+                            <Image  Source="Image23.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="151,23.2,828,72.8" Grid.Row="3" Click="Penza_Click" Opacity="0" >
+                        <Button.ToolTip>
+                            <Image  Source="Image24.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="324,51.2,642,47.8" Grid.Row="3" Click="Tumen_Click" Opacity="0" >
+                        <Button.ToolTip>
+                            <Image  Source="Image25.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="272,63.2,689,35.8" Grid.Row="3" Click="Chelaybinsk_Click" Opacity="0" >
+                        <Button.ToolTip>
+                            <Image  Source="Image26.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="211,77.2,750,21.8" Grid.Row="3" Click="Orenburg_Click" Opacity="0" >
+                        <Button.ToolTip>
+                            <Image  Source="Image27.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="128,69.2,835,31.8" Grid.Row="3" Click="Volgograd_Click" Opacity="0"  >
+                        <Button.ToolTip>
+                            <Image  Source="Image28.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="75,59.2,892,35.8" Grid.Row="3" Click="R_N_D_Click" Opacity="0"  >
+                        <Button.ToolTip>
+                            <Image  Source="Image29.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="62,81.2,900,19.8" Grid.Row="3" Click="Krasnodar_Click" Opacity="0"  >
+                        <Button.ToolTip>
+                            <Image  Source="Image30.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="125,6.2,840,88.8" Grid.Row="4" Click="Astrahan_Click" Opacity="0"  >
+                        <Button.ToolTip>
+                            <Image  Source="Image31.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="10,56.2,952,40.8" Grid.Row="3" Click="Sevastopl_Click" Opacity="0"  >
+                        <Button.ToolTip>
+                            <Image  Source="Image32.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="364,86.2,610,12.8" Grid.Row="3" Click="Omsk_Click" Opacity="0" >
+                        <Button.ToolTip>
+                            <Image  Source="Image33.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="409,102.2,549,100.8" Grid.Row="3" Click="Novosib_Click" Opacity="0" Grid.RowSpan="2" >
+                        <Button.ToolTip>
+                            <Image  Source="Image34.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="444,77.2,527,21.8" Grid.Row="3" Click="Tomsk_Click" Opacity="0" >
+                        <Button.ToolTip>
+                            <Image  Source="Image35.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="460,96.2,502,2.8" Grid.Row="3" Click=" Kemerovo_Click" Opacity="0" >
+                        <Button.ToolTip>
+                            <Image  Source="Image36.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="429,23.2,537,75.8" Grid.Row="4" Click="Barnaul_Click" Opacity="0" >
+                        <Button.ToolTip>
+                            <Image  Source="Image37.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="466,9.2,488,89.8" Grid.Row="4" Click="Novocuzn_Click" Opacity="0" >
+                        <Button.ToolTip>
+                            <Image  Source="Image38.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="508,95.2,448,3.8" Grid.Row="3" Click="Krasnoayrsk_Click" Opacity="0" >
+                        <Button.ToolTip>
+                            <Image  Source="Image39.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="595,33.2,371,65.8" Grid.Row="4" Click="Ircutsk_Click" Opacity="0">
+                        <Button.ToolTip>
+                            <Image  Source="Image40.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="849,8.2,113,90.8" Grid.Row="4" Click="Habarovsk_Click" Opacity="0">
+                        <Button.ToolTip>
+                            <Image  Source="Image41.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button Margin="849,78.2,101,20.8" Grid.Row="4" Click="Vladivostok_Click" Opacity="0">
+                        <Button.ToolTip>
+                            <Image  Source="Image42.png" Stretch="Fill" />
+                        </Button.ToolTip>
+                    </Button>
+
+                </Grid>
+            </TabItem.Content>
+
+        </TabItem>
+        <TabItem x:Name="Tab2">
+            <TabItem.Header>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="3" FontSize="18">Тест</TextBlock>
+                </StackPanel>
+            </TabItem.Header>
+            <TabItem.Content>
+                <Grid Background="#FFE2EFF0" Margin="0,0,-0.4,-2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1000"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="300"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Content="Начать тест"  Grid.Column="0" Grid.Row="0" Height="100" Width="200" Click="Retry" FontSize="30" Background="#FF68CD74" BorderBrush="#FF28562F" OpacityMask="Black" Margin="31,76,769,124" />
+                    <TextBlock Name="q" Text="Нажмите начать тест" Grid.Column="0" FontSize="30" Foreground="#FF68CD74" Grid.ColumnSpan="2" Margin="31,181,206.4,74"/>
+                    <RadioButton Name="a2" Grid.Column="0" FontSize="20" Margin="31,274,943,175" Grid.RowSpan="2" />
+                    <RadioButton Name="b2" Grid.Column="0" Grid.Row="1" FontSize="30" Margin="33,23,943,132" />
+                    <RadioButton Name="c2" Grid.Column="0" Grid.Row="1" FontSize="20" Margin="33,68,934,63" Background="White" />
+                    <TextBlock Name="mark" Text="Ваши баллы 0 из 0" FontSize="30" Margin="10,116,622,73.4" Foreground="#FF68CD74" Grid.Row="1" Grid.RowSpan="2"/>
+                    <TextBlock Name="a3" Text="ответ 1" Grid.Column="0" FontSize="30" Margin="61,255,583,3" Foreground="#FF68CD74"/>
+                    <TextBlock Name="b3" Text="ответ 2" Grid.Column="0" Grid.Row="1" FontSize="30" Margin="61,3,583,133" Foreground="#FF68CD74"/>
+                    <TextBlock Name="c3" Text="ответ 3" Grid.Column="0" Grid.Row="1" FontSize="30" Margin="61,49,581,89" Foreground="#FF68CD74"/>
+                    <Button Content="Ответить" Grid.Row="2" Width="200" Click="nEXT" FontSize="30" Margin="31,20.8,769,89.4" Background="#FF68CD74" BorderBrush="#FF28562F" OpacityMask="Black" Grid.RowSpan="2" RenderTransformOrigin="-0.534,0.404" />
+                    <TextBox Name="i" Text="50" MaxLength="2"  HorizontalAlignment="Left" Height="100" Margin="234,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" FontSize="72" Foreground="#FF68CD74">
+                        <TextBox.BorderBrush>
+                            <ImageBrush/>
+                        </TextBox.BorderBrush>
+                        <TextBox.Background>
+                            <ImageBrush/>
+                        </TextBox.Background>
+                    </TextBox >
+                    <TextBlock  Text="- Количество вопросов" Grid.Column="0" FontSize="72" Foreground="#FF68CD74" Grid.ColumnSpan="2" Margin="325,77,-87.6,125"/>
+                    <TextBlock x:Name="m2ark" Text="0%" FontSize="30" Margin="10,158,891,69.4" Foreground="#FF68CD74" Grid.Row="1" Grid.RowSpan="2"/>
+                    <TextBlock Grid.Column="0" FontSize="72" Foreground="#FF68CD74" Grid.ColumnSpan="2" Margin="331,213,-5.6,0" Name="b6" Text=""/>
+                    <TextBlock x:Name="h1" Text="1." Grid.Column="0" Grid.Row="1" FontSize="30" Margin="513,0,-0.6,137" Foreground="#FFACE4B3" Grid.ColumnSpan="2" Background="#FF68CD74"/>
+                    <TextBlock x:Name="h2" Text="2." Grid.Column="0" Grid.Row="1" FontSize="30" Margin="513,43,-0.6,93" Foreground="#FF68CD74" Grid.ColumnSpan="2" Background="#FFACE4B3"/>
+                    <TextBlock x:Name="h3" Text="3." Grid.Column="0" Grid.Row="1" FontSize="30" Margin="513,87,-0.6,49" Foreground="#FFACE4B3" Grid.ColumnSpan="2" Background="#FF68CD74"/>
+                    <TextBlock x:Name="h4" Text="4." Grid.Column="0" Grid.Row="1" FontSize="30" Margin="513,131,-0.6,5" Foreground="#FF68CD74" Grid.ColumnSpan="2" Background="#FFACE4B3"/>
+                    <TextBlock x:Name="h5" Text="5." Grid.Column="0" Grid.Row="1" FontSize="30" Margin="513,175,-0.6,51.4" Foreground="#FFACE4B3" Grid.ColumnSpan="2" Background="#FF68CD74" Grid.RowSpan="2"/>
+                    <TextBlock x:Name="h6" Text="6." Grid.Column="0" Grid.Row="2" FontSize="30" Margin="513,38,-0.6,8.4" Foreground="#FF68CD74" Grid.ColumnSpan="2" Background="#FFACE4B3"/>
+                    <TextBlock x:Name="h7" Text="7." Grid.Column="0" Grid.Row="2" FontSize="30" Margin="513,81,-0.6,55" Foreground="#FFACE4B3" Grid.ColumnSpan="2" Background="#FF68CD74" Grid.RowSpan="2"/>
+                    <TextBlock x:Name="h8" Text="8." Grid.Column="0" Grid.Row="3" FontSize="30" Margin="513,33.6,-0.6,12" Foreground="#FF68CD74" Grid.ColumnSpan="2" Background="#FFACE4B3"/>
+                    <TextBlock x:Name="h9" Text="9." Grid.Column="0" Grid.Row="3" FontSize="30" Margin="513,77.6,-0.6,58.4" Foreground="#FFACE4B3" Grid.ColumnSpan="2" Background="#FF68CD74" Grid.RowSpan="2"/>
+                    <TextBlock x:Name="h10" Text="10." Grid.Column="0" Grid.Row="4" FontSize="30" Margin="513,32,-0.6,14.4" Foreground="#FF68CD74" Grid.ColumnSpan="2" Background="#FFACE4B3"/>
+                    <TextBox x:Name="rt" MaxLength="7"  HorizontalAlignment="Left" Height="100" Margin="333,4,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="281" FontSize="72" Foreground="#FF68CD74">
+                        <TextBox.BorderBrush>
+                            <ImageBrush/>
+                        </TextBox.BorderBrush>
+                        <TextBox.Background>
+                            <ImageBrush/>
+                        </TextBox.Background>
+                    </TextBox>
+                    <TextBlock Grid.Column="0" FontSize="72" Foreground="#FF68CD74" Grid.ColumnSpan="2" Margin="612,8,-374.6,203"><Run Text="- "/><Run Text="Введите имя"/></TextBlock>
+
+
+                </Grid>
+            </TabItem.Content>
+        </TabItem>
+        <TabItem x:Name="Tab3" Margin="-1.6,5,-1.6,-0.4">
+            <TabItem.Header>
+                <StackPanel Orientation="Horizontal" Height="20">
+                    <TextBlock Margin="3,-3" FontSize="18" RenderTransformOrigin="0.5,0.508">О проекте</TextBlock>
+                </StackPanel>
+            </TabItem.Header>
+            <TabItem.Content>
+                <Grid Background="#FFE2EFF0" Margin="0,0,-0.4,-2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="335.2"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="0*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="24.8"/>
+                        <RowDefinition Height="0*"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="65.768"/>
+                        <RowDefinition Height="402.4"/>
+                    </Grid.RowDefinitions>
+
+
+                    <Label Content="Создатель: Червов Никита Романович" Grid.Column="1" Grid.Row="2" FontSize="30" Foreground="#FF68CD74" />
+                    <Label Content="Город: Симферополь"                 Grid.Column="1" Grid.Row="3" FontSize="30" Foreground="#FF68CD74" />
+                    <Label Content="Учусь в 8 классе"                   Grid.Column="1" Grid.Row="4" FontSize="30" Foreground="#FF68CD74" />
+                    <Label Content="Проект написан на c#"               Grid.Column="1" Grid.Row="5" FontSize="30" Foreground="#FF68CD74" />
+                    <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="8" FontSize="30" Foreground="#FF68CD74" Content="Мой проект поможет вам получить информацию о городе, в который вы хотите &#xA;поехать, так же вы можете узнать какое расстояние вам нужно будет преодолеть &#xA;до цели. Ещё в моем проекте есть тестер - во время дороги вы можете его пройти и &#xA;понять насколько хорошо вы знаете города России, кроме того время в дороге &#xA;пройдет для вас незаметно.&#xA; " />
+                </Grid>
+            </TabItem.Content>
+        </TabItem>
+    </TabControl>
+
+</Window>
